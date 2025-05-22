@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace bscApi.Models;
+
+public partial class Usuario
+{
+    public int IdUsuario { get; set; }
+
+    public int? IdPersona { get; set; }
+
+    public int? IdPerfil { get; set; }
+
+    public int? IdEstatusUsuario { get; set; }
+
+    public virtual CatEstatusUsuario? IdEstatusUsuarioNavigation { get; set; }
+
+    public virtual Perfile? IdPerfilNavigation { get; set; }
+
+    public virtual Persona? IdPersonaNavigation { get; set; }
+
+    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+}

@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace bscApi.Models;
+
+public partial class CatEstatusUsuario
+{
+    public int IdEstatusUsuario { get; set; }
+
+    public string? EstatusUsuarios { get; set; }
+
+    public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "70EvJ7LeJhbNV2xrFQs1FW+0PvsMM36s88qYXk1rjmM=",
+  "Source": "bscApi",
+  "BasePath": "_content/bscApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
