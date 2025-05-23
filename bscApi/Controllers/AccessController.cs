@@ -5,6 +5,7 @@ using bscApi.Helpers;
 using bscApi.Models;
 using bscApi.DTO;
 using Microsoft.AspNetCore.Authorization;
+using bscApi.Repository;
 
 
 namespace bscApi.Controllers
@@ -13,12 +14,15 @@ namespace bscApi.Controllers
     [AllowAnonymous]
     public class AccessController : ControllerBase
     {
-        private readonly BscContext _context;
+        private readonly bscContext _context;
         private readonly Utils _utils;
-        public AccessController(BscContext context, Utils utils)
+
+        private readonly UserRepository _userRepository;
+        public AccessController(bscContext context, Utils utils, UserRepository userRepository)
         {
             _context = context;
             _utils = utils;
+            _userRepository = userRepository;
         }
 
         [HttpPost("register")]
@@ -36,14 +40,16 @@ namespace bscApi.Controllers
                 AMaterno = register.AMaterno,
                 Domicilio = register.Domicilio,
                 Telefono = register.Telefono,
-                FNacimiento = register.FNacimiento,
+                FNacimiento = DateTime.Now,
                 FCreacion = DateTime.Now,
                 FModifico = DateTime.Now,
                 Correo = register.Correo,
-                Contrasenia = _utils.encryptSHA256(register.Contrasenia!),
+                Contrasenia = _utils.encryptSHA256(register.Contrasenia!)
             };
             await _context.Personas.AddAsync(person);
             await _context.SaveChangesAsync();
+            await _userRepository.AddUser(person.IdPersona, register.IdPerfil);
+
             if (person.IdPersona != 0)
             {
                 return Ok(new { isSuccess = true });
