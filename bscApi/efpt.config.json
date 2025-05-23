@@ -1,0 +1,90 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "bscContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "bscApi",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[cat_estatus_pedidos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[cat_estatus_usuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[categoria_productos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[clientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pedidos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[perfiles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[persona]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[producto_pedido]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[productos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[usuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VwGetProducts]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[VwGetUsers]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": "(localdb)\\MSSQLLocalDB.bsc",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
