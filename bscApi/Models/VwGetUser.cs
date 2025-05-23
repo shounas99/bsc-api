@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace bscApi.Models;
 
-public partial class Persona
+public partial class VwGetUser
 {
     public int IdPersona { get; set; }
 
@@ -23,13 +23,7 @@ public partial class Persona
 
     public string Correo { get; set; }
 
-    public string Contrasenia { get; set; }
+    public int NombrePerfil { get; set; }
 
-    public DateTime? FCreacion { get; set; }
-
-    public DateTime? FModifico { get; set; }
-
-    public virtual ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
-
-    public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
+    public string EstatusUsuario { get; set; }
 }

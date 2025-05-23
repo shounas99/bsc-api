@@ -5,19 +5,17 @@ using System.Collections.Generic;
 
 namespace bscApi.Models;
 
-public partial class Producto
+public partial class VwGetProduct
 {
     public int IdProducto { get; set; }
 
     public int? IdCategoriaProducto { get; set; }
 
-    public string Producto1 { get; set; }
+    public string Producto { get; set; }
 
     public decimal? Precio { get; set; }
 
     public int? Cantidad { get; set; }
 
-    public virtual CategoriaProducto IdCategoriaProductoNavigation { get; set; }
-
-    public virtual ICollection<ProductoPedido> ProductoPedidos { get; set; } = new List<ProductoPedido>();
+    public string CategoriaProducto { get; set; }
 }
