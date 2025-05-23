@@ -56,6 +56,14 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[VwGetClients]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[VwGetOrders]",
+         "ObjectType": 3
+      },
+      {
          "Name": "[dbo].[VwGetProducts]",
          "ObjectType": 3
       },
