@@ -24,10 +24,15 @@ Restore dependencies:
 dotnet restore
 ```
 ## ⚠️ IMPORTANT
+### Note:
+
+To understand the database structure, you can view the schema diagram located in the `/database/schemas` folder. This folder contains visual representations of our database tables and their relationships.
+
 
 ## Database Setup
 
 ### 1. Create Database
+
 
 Run this command in your SQL Server or database client to create the database:
 
