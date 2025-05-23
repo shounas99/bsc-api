@@ -33,6 +33,10 @@ public partial class bscContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
+    public virtual DbSet<VwGetClient> VwGetClients { get; set; }
+
+    public virtual DbSet<VwGetOrder> VwGetOrders { get; set; }
+
     public virtual DbSet<VwGetProduct> VwGetProducts { get; set; }
 
     public virtual DbSet<VwGetUser> VwGetUsers { get; set; }
@@ -242,6 +246,39 @@ public partial class bscContext : DbContext
             entity.HasOne(d => d.IdPersonaNavigation).WithMany(p => p.Usuarios)
                 .HasForeignKey(d => d.IdPersona)
                 .HasConstraintName("FK__usuarios__id_per__7F2BE32F");
+        });
+
+        modelBuilder.Entity<VwGetClient>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("VwGetClients");
+
+            entity.Property(e => e.IdCliente).HasColumnName("id_cliente");
+            entity.Property(e => e.IdPersona).HasColumnName("id_persona");
+            entity.Property(e => e.NombreCompleto)
+                .IsRequired()
+                .HasMaxLength(302)
+                .IsUnicode(false)
+                .HasColumnName("nombre_completo");
+        });
+
+        modelBuilder.Entity<VwGetOrder>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("VwGetOrders");
+
+            entity.Property(e => e.Cantidad).HasColumnName("cantidad");
+            entity.Property(e => e.EstatusPedidos)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("estatus_pedidos");
+            entity.Property(e => e.IdEstatusPedidos).HasColumnName("id_estatus_pedidos");
+            entity.Property(e => e.IdPedido).HasColumnName("id_pedido");
+            entity.Property(e => e.PrecioTotal)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("precio_total");
         });
 
         modelBuilder.Entity<VwGetProduct>(entity =>
