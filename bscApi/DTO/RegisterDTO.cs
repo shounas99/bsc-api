@@ -10,5 +10,6 @@
         public DateTime? FNacimiento { get; set; }
         public string Correo { get; set; }
         public string Contrasenia { get; set; }
+        public int IdPerfil { get; set; }
     }
 }
